@@ -10,36 +10,57 @@
 </head>
 <body>
     <div class="jumbotron text-center">
-            <h1 class="display-4">Train Scheduler</h1>
-            <p class="lead">Congrats! You've been made head train scheduler. Schedule wisely.</p>
-        </div>
-        <div class="card-header">
-            Current Train Schedule
-        </div>
-        <br>
-        <table class="table table-striped text-center">
-        <thead>
-            <tr>
-            <th scope="col">Train Name</th>
-            <th scope="col">Destination</th>
-            <th scope="col">Frequency (min)</th>
-            <th scope="col">Next Arrival</th>
-            <th scope="col">Minutes Away</th>
-            </tr>
-        </thead>
-        <tbody id="table-body">
-    
-        </tbody>
-        </table>
-        <br>
-        <div class="card">
-        <div class="card-header">
-        Add Train
-        </div>
+        <h1 class="display-4">Train Scheduler</h1>
+        <p class="lead">Congrats! You've been made head train scheduler. Schedule wisely.</p>
+    </div>
+    <div class="card-header">
+        Current Train Schedule
+    </div>
+    <br>
+    <table class="table table-striped text-center">
+    <thead>
+        <tr>
+        <th scope="col">Train Name</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Frequency (min)</th>
+        <th scope="col">Next Arrival</th>
+        <th scope="col">Minutes Away</th>
+        </tr>
+    </thead>
+    <tbody id="table-body">
+
+    </tbody>
+    </table>
+    <br>
+    <div class="card">
+    <div class="card-header">
+    Add Train
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Train Name</label>
+                <input type="text" class="form-control" id="name-input" placeholder="">
+            </div>
+            <div class="form-group">
+                    <label for="formGroupExampleInput">Destination</label>
+                    <input type="text" class="form-control" id="destination-input" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">First Train Time (HH:mm - military time)</label>
+                <input type="text" class="form-control" id="time-input" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Frequency (min)</label>
+                <input type="text" class="form-control" id="frequency-input" placeholder="">
+            </div>
+            <button id="add-train" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div> 
 
 <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="app.js"></script>  
+<script src="assets/app.js"></script>  
 </body>
 </html>
