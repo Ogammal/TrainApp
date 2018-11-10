@@ -15,6 +15,7 @@ var name;
 var destination;
 var time;
 var frequency;
+var mins;
 
 var database = firebase.database();
 
@@ -24,21 +25,26 @@ $('#add-train').on('click', function() {
     destination=$('#destination-input').val().trim();
     time=$('#time-input').val().trim();
     frequency=$('#frequency-input').val().trim();
+    mins=Math.floor(Math.random() * frequency);
 
      database.ref().push( {
         name: name,
         destination: destination,
         time: time,
-        frequency: frequency
+        frequency: frequency,
+        mins: mins
      });
+     console.log(mins);
  });
 
  database.ref().on("child_added", function(snap) {
-    var tr = $("<tr>");
-       tr.append("<td>" + snap.val().name + "</td>");
-       tr.append("<td>" + snap.val().destination + "</td>");
-       tr.append("<td>" + snap.val().frequency + "</td>");
-       tr.append("<td>" + snap.val().time + "</td>");
-       tr.append("<td>" + Math.floor(Math.random() * snap.val().frequency) + "</td>");
-       $("#table-body").append(tr);
+    var row = $("<tr>");
+       row.append("<td>" + snap.val().name + "</td>");
+       row.append("<td>" + snap.val().destination + "</td>");
+       row.append("<td>" + snap.val().frequency + "</td>");
+       row.append("<td>" + snap.val().time + "</td>");
+       row.append("<td>" + snap.val().mins + "</td>");
+    //    tr.append("<td>" + Math.floor(Math.random() * snap.val().frequency) + "</td>");
+       $("#table-body").append(row);
+       console.log(mins);
 });
