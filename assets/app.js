@@ -44,7 +44,6 @@ $('#add-train').on('click', function() {
        row.append("<td>" + snap.val().frequency + "</td>");
        row.append("<td>" + snap.val().time + "</td>");
        row.append("<td>" + snap.val().mins + "</td>");
-    //    tr.append("<td>" + Math.floor(Math.random() * snap.val().frequency) + "</td>");
        $("#table-body").append(row);
        console.log(mins);
 });
